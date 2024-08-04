@@ -339,22 +339,32 @@ $gutter: 32px;
     background: linear-gradient(90deg, rgba(4, 12, 27, 1) 8%, rgba(4, 12, 27, 0.700717787114846) 35%, rgba(4, 12, 27, 1) 89%);
 
   }
-
-  img {
-    position: absolute;
+  
+.img-slider {
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  @include responsive(l) {
+      width: 120%;
+    }
+  
+    @include responsive(m) {
+      width: 120%;
   }
-
+  
   @include responsive(s) {
-    height: 695px;
-    width: 495px;
+  width: 300%;
   }
+                                                                }
 }
-
 .hero {
   max-width: 1280px;
   margin: 0 auto;
   padding: 24px 16px;
   height: 100vh;
+  
 }
 
 .text-spider-hero {
@@ -426,7 +436,7 @@ $gutter: 32px;
   left: 25%;
   z-index: 150;
 @include responsive(s) {
-    top: 55%;
+    top: 65%;
     left: 25%;
 
   }
@@ -507,6 +517,11 @@ $gutter: 32px;
   top: 50%;
   right: 5%;
   z-index: 150;
+  @include responsive(s) {
+      display: flex;
+      top: 50%;
+      right: 32%;
+    }
 }
 
 .point {
