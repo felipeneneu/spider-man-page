@@ -1,71 +1,72 @@
 
 /*==================== POINTS ====================*/
-const points = document.querySelectorAll('.point');
-const images = document.querySelectorAll('.img-slider');
 
-let i = 0;
+
+const points = document.querySelectorAll('.space-point')
+const style_points = document.querySelectorAll('.point')
+
+const images = document.querySelectorAll('.img-slider')
 
 points.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    console.log("Clicou no ponto: " + (index));
+  console.log(index)
 
-    // Zera todas as imagens
+  item.addEventListener('click', () => {
+
+    //zerar todas as imagens
     images[0].style.opacity = "0";
     images[1].style.opacity = "0";
     images[2].style.opacity = "0";
     images[3].style.opacity = "0";
 
-    // Aparece somente aquela que clicou
     images[index].style.opacity = "1";
 
+    style_points[0].classList.remove("active-point");
+    style_points[1].classList.remove("active-point");
+    style_points[2].classList.remove("active-point");
+    style_points[3].classList.remove("active-point");
 
-    points[0].classList.remove("active-point");
-    points[1].classList.remove("active-point");
-    points[2].classList.remove("active-point");
-    points[3].classList.remove("active-point");
+    style_points[index].classList.add("active-point");
 
-    points[index].classList.add("active-point");
+
+
   })
 })
+
+let i = 0;
 
 setInterval(changeBackground, 12000);
 
 function changeBackground() {
 
-  // Zera todas as imagens
   images[0].style.opacity = "0";
   images[1].style.opacity = "0";
   images[2].style.opacity = "0";
   images[3].style.opacity = "0";
 
-  // Aparece somente aquela que clicou
   images[i].style.opacity = "1";
 
-  points[0].classList.remove("active-point");
-  points[1].classList.remove("active-point");
-  points[2].classList.remove("active-point");
-  points[3].classList.remove("active-point");
+  style_points[0].classList.remove("active-point");
+  style_points[1].classList.remove("active-point");
+  style_points[2].classList.remove("active-point");
+  style_points[3].classList.remove("active-point");
 
-  points[i].classList.add("active-point");
+  style_points[i].classList.add("active-point");
 
   i++;
 
   if (i == 4) i = 0;
-
-  //console.log('trocou de bg');
 }
 
-//console.log(points);
-//console.log(images[0]);
+
 
 /*--=========== GSAP SCROLLTRIGGER ============- */
-/*
+
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
-*/
+
 /*--=========== TIMELINE LOADING E HERO ============- */
-/*
+
   var tl1 = gsap.timeline();
     
   tl1
@@ -103,4 +104,3 @@ document.addEventListener("DOMContentLoaded", () => {
 ScrollTrigger.addEventListener("scrollStart", () => {
   ScrollTrigger.refresh();
 });
-*/
