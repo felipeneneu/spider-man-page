@@ -388,7 +388,8 @@ $gutter: 32px;
   top: 50%;
   left: 50%;
   z-index: 50;
-    transform: translate(-50%, -50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
+  pointer-events: none;
 
   @include responsive(s) {
     display: none;
@@ -459,6 +460,7 @@ $gutter: 32px;
   height: 120px;
   border-radius: 50%;
   position: relative;
+  content: '';
   background-color: rgba(17, 25, 41, 0.50);
   backdrop-filter: blur(6px);
   transition: .7s ease;
@@ -467,7 +469,21 @@ $gutter: 32px;
       width: 60px;
       height: 60px;
     }
-  &::after {
+&:hover {
+  backdrop-filter: blur(3px);
+  transform: scale(1.2);
+}
+
+h6 {
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 140%;
+  transform: translate(-50%, -50%);
+}
+}
+
+.icon-Play {
     content: '';
     position: absolute;
     top: 50%;
@@ -481,21 +497,9 @@ $gutter: 32px;
     @include responsive(s) {
         width: 40px;
         height: 40px;
-      }
-  }
-
-  &:hover {
-    backdrop-filter: blur(3px);
-    transform: scale(1.2);
-  }
-
-  h6 {
-    white-space: nowrap;
-    position: absolute;
-    top: 50%;
-    left: 140%;
-    transform: translate(-50%, -50%);
-  }
+      
+  
+}
 }
 .cta-link {
   text-transform: uppercase;
@@ -601,5 +605,25 @@ $gutter: 32px;
     top: 00%;
     left: 0%;
     backdrop-filter: blur(0px);
+  }
+}
+.social {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    padding: 4px;
+    margin: 20px;
+  }
+
+  @include responsive(s) {
+    display: none;
   }
 }

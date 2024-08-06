@@ -554,6 +554,7 @@
   left: 50%;
   z-index: 50;
   transform: translate(-50%, -50%) scale(1.1);
+  pointer-events: none;
 }
 @media screen and (max-width: 960px) {
   .spider-hero {
@@ -627,6 +628,7 @@
   height: 120px;
   border-radius: 50%;
   position: relative;
+  content: "";
   background-color: rgba(17, 25, 41, 0.5);
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
@@ -636,24 +638,6 @@
   .cta-play {
     width: 60px;
     height: 60px;
-  }
-}
-.cta-play::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 32px;
-  height: 32px;
-  background-image: url("../../svg/icon-play.svg");
-  background-size: cover;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-@media screen and (max-width: 960px) {
-  .cta-play::after {
-    width: 40px;
-    height: 40px;
   }
 }
 .cta-play:hover {
@@ -667,6 +651,25 @@
   top: 50%;
   left: 140%;
   transform: translate(-50%, -50%);
+}
+
+.icon-Play {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  background-image: url("../../svg/icon-play.svg");
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+@media screen and (max-width: 960px) {
+  .icon-Play {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .cta-link {
@@ -769,6 +772,26 @@
             backdrop-filter: blur(0px);
   }
 }
+.social {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social img {
+  padding: 4px;
+  margin: 20px;
+}
+@media screen and (max-width: 960px) {
+  .social {
+    display: none;
+  }
+}
+
 .s-0 {
   margin: 0;
   padding: 0;
@@ -1965,7 +1988,28 @@ nav {
 }
 
 .social {
-  border: 5px solid green;
+  position: absolute;
+  top: 55%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  z-index: 250;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social img {
+  padding: 4px;
+  margin: 20px;
+}
+@media screen and (max-width: 960px) {
+  .social {
+    display: none;
+  }
+}
+
+.icon-social:hover img {
+  transform: translate3d(0, -4px, 0);
 }
 
 .btn-secondary {
